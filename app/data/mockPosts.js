@@ -85,7 +85,7 @@ export const MOCK_POSTS = [
     `,
   },
   {
-    id: 4,
+    id: 3,
     title: "유연하고 안전하게 배포 Pipeline 운영하기",
     author: "김동석",
     date: new Date("2023-10-12"),
