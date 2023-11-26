@@ -1,5 +1,5 @@
 import AbstractView from "./AbstractView.js";
-import { MOCK_POSTS } from "../../data/mockPosts.js";
+import { MOCK_POSTS } from "/data/mockPosts.js";
 
 export default class extends AbstractView {
   constructor(params) {
