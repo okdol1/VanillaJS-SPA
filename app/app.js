@@ -1,4 +1,4 @@
-import router, { navigateTo } from "./router.js";
+import router, { navigateTo } from "/routers/index.js";
 
 const setupEventListeners = () => {
   document.body.addEventListener("click", (event) => {
