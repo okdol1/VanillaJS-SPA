@@ -1,8 +1,16 @@
-import Career from "./views/CareerView.js";
-import Design from "./views/DesignView.js";
-import Home from "./views/Home.js";
-import Post from "./views/PostView.js";
+import Career from "/views/CareerView.js";
+import Design from "/views/DesignView.js";
+import Home from "/views/Home.js";
+import Post from "/views/PostView.js";
 
+const routes = [
+  { path: "/", view: Home },
+  { path: "/design", view: Design },
+  { path: "/career", view: Career },
+  { path: "/posts/:id", view: Post },
+];
+
+// 경로를 정규 표현식으로 변환
 const pathToRegex = (path) =>
   new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
@@ -19,19 +27,12 @@ const getParams = (match) => {
   );
 };
 
-const navigateTo = (url) => {
+export const navigateTo = (url) => {
   history.pushState(null, null, url);
   router();
 };
 
 const router = async () => {
-  const routes = [
-    { path: "/", view: Home },
-    { path: "/design", view: Design },
-    { path: "/career", view: Career },
-    { path: "/posts/:id", view: Post },
-  ];
-
   const potentialMatches = routes.map((route) => {
     return {
       route: route,
@@ -51,19 +52,9 @@ const router = async () => {
   }
 
   const view = new match.route.view(getParams(match));
-
   document.querySelector("#app").innerHTML = await view.getHtml();
 };
 
 window.addEventListener("popstate", router);
 
-document.addEventListener("DOMContentLoaded", () => {
-  document.body.addEventListener("click", (e) => {
-    if (e.target.matches("[data-link]")) {
-      e.preventDefault();
-      navigateTo(e.target.href);
-    }
-  });
-
-  router();
-});
+export default router;

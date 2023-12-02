@@ -3,9 +3,10 @@ const path = require("path");
 
 const app = express();
 
-app.use("/static", express.static(path.resolve(__dirname, "app", "static")));
 app.use("/data", express.static(path.resolve(__dirname, "app", "data")));
+app.use("/js", express.static(path.resolve(__dirname, "app", "js")));
 app.use("/utils", express.static(path.resolve(__dirname, "app", "utils")));
+app.use("/views", express.static(path.resolve(__dirname, "app", "views")));
 
 app.get("/*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "app", "index.html"));
