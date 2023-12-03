@@ -13,13 +13,20 @@ export default class extends AbstractView {
     const post = MOCK_POSTS[this.postId];
     return `
       <div class="container__inner post-container">
-        <img src="${post.thumbnailImg}" alt="${post.title}" />
-        <h1>${post.title}</h1>
-        <div>
-          <p>${post.author}</p>
-          <p>${formatDate(post.date)}</p>
+        <header>
+          <img src="${post.thumbnailImg}" alt="${post.title}" />
+          <h1 class="post-title">${post.title}</h1>
+          <section class="author-container">
+            <img src="/public/images/common-profile.png" alt="profile image" />
+            <div>
+              <p class="author-name">${post.author}</p>
+              <p class="author-date">${formatDate(post.date)}</p>
+            </div>
+          </section>
+        </header>
+        <div class="post-container__inner">
+          ${post.contents}
         </div>
-        ${post.contents}
       </div>
     `;
   }
