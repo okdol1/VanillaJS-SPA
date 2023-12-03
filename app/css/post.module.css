@@ -2,3 +2,68 @@
   max-width: 700px;
   margin-bottom: 192px;
 }
+
+.post-container > header {
+  margin-top: 36px;
+}
+
+.post-container > header > img {
+  border-radius: 12px;
+}
+
+.post-container > header > *:not(:first-child) {
+  margin-top: 20px;
+}
+
+.post-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: rgb(51, 61, 75);
+  margin-top: 20px;
+}
+
+.author-container {
+  display: flex;
+  align-items: center;
+}
+
+.author-container > img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  margin-right: 14px;
+}
+
+.author-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: rgb(78, 89, 104);
+}
+
+.author-date {
+  font-size: 14px;
+  color: rgb(139, 149, 161);
+}
+
+.post-container__inner {
+  margin-top: 54px;
+}
+
+.post-container__inner > div p,
+.post-container__inner > div aside {
+  margin: 24px 0px 8px;
+  line-height: 1.6;
+}
+
+aside {
+  padding: 16px 40px 32px;
+  border-radius: 16px;
+  background-color: #f2f4f6;
+}
+
+h4 {
+  font-size: 19px;
+  line-height: 1.6;
+  margin: 24px 0px 0px;
+  color: #191f28;
+}
