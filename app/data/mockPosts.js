@@ -6,6 +6,8 @@ export const MOCK_POSTS = [
     date: new Date("2023-11-22"),
     thumbnailImg:
       "https://static.toss.im/assets/payments/contents/feign-thumb.jpg",
+    summary:
+      "Feign과 다중 스레드를 사용하는 과정에서 생긴 문제를 이해하고 성능 개선까지 한 경험을 공유해요.",
     contents: `
       <div>
         <aside>
@@ -39,6 +41,8 @@ export const MOCK_POSTS = [
     date: new Date("2023-11-08"),
     thumbnailImg:
       "https://static.toss.im/ml-illust/programmer-handling-code-box-with-highlighting-lines_20231106_111448975.png",
+    summary:
+      "코드 복잡성 관리 측면에서 의미를 축약한 표현의 문제와 해결 방법을 예제로 알아봐요.",
     contents: `
       <div>
         <aside>
@@ -65,6 +69,8 @@ export const MOCK_POSTS = [
     date: new Date("2023-10-18"),
     thumbnailImg:
       "https://static.toss.im/assets/payments/contents/engineering_thumb.jpg",
+    summary:
+      "토스페이먼츠 프론트엔드 챕터에서 웹에서 퍼널을 손쉽게 관리하기 위해 했던 고민과 해결 방법을 공유해요.",
     contents: `
       <div>
         <aside>
@@ -91,6 +97,8 @@ export const MOCK_POSTS = [
     date: new Date("2023-10-12"),
     thumbnailImg:
       "https://static.toss.im/career-resource/techblog_slash23_thumb_06_%EA%B9%80%EB%8F%99%EC%84%9D.png",
+    summary:
+      "생산성, 안정성, 보안성을 모두 달성하기 위해선 ‘Pipeline’을 어떻게 설정해야 할까요? 다양하고 복잡한 토스뱅크의 배포 ‘Pipeline’를 안전하게 운영하기 위한 노력을 소개합니다.",
     contents: `
       <div>
         <p>
