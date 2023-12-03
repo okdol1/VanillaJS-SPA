@@ -6,9 +6,13 @@ export default class extends AbstractView {
     this.setTitle("토스 기술 블로그, 토스디자인");
   }
 
-  async getHtml() {
+  getHtml() {
     return `
     <h1>Design Page</h1>
     `;
+  }
+
+  render() {
+    return this.getHtml();
   }
 }

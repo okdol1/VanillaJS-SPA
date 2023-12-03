@@ -72,13 +72,9 @@ button {
   margin: auto;
 }
 
-.container > * {
+.container__inner {
   margin: auto;
   width: 92%;
-}
-
-.main-container {
-  max-width: 980px;
 }
 
 /* NAV */

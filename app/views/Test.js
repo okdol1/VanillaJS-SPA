@@ -6,7 +6,7 @@ export default class extends AbstractView {
     super(params);
   }
 
-  async getHtml() {
+  getHtml() {
     return `
         <h1>Test Page</1>
         <main>
@@ -16,7 +16,11 @@ export default class extends AbstractView {
         `;
   }
 
-  async executeViewScript() {
+  executeViewScript() {
     setupCounter();
+  }
+
+  render() {
+    return this.getHtml();
   }
 }
