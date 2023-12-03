@@ -2,12 +2,15 @@ import Career from "/views/CareerView.js";
 import Design from "/views/DesignView.js";
 import Home from "/views/Home.js";
 import Post from "/views/PostView.js";
+import Test from "/views/Test.js";
+import { setupCounter } from "/model/Counter.js";
 
 const routes = [
   { path: "/", view: Home },
   { path: "/design", view: Design },
   { path: "/career", view: Career },
   { path: "/posts/:id", view: Post },
+  { path: "/test", view: Test },
 ];
 
 // 경로를 정규 표현식으로 변환
@@ -53,6 +56,10 @@ const router = async () => {
 
   const view = new match.route.view(getParams(match));
   document.querySelector("#app").innerHTML = await view.getHtml();
+
+  if (match.route.view === Test) {
+    setupCounter();
+  }
 };
 
 window.addEventListener("popstate", router);

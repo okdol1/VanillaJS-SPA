@@ -1,4 +1,4 @@
-import AbstractView from "./AbstractView";
+import AbstractView from "./AbstractView.js";
 
 export default class extends AbstractView {
   constructor(params) {
@@ -9,6 +9,10 @@ export default class extends AbstractView {
   async getHtml() {
     return `
         <h1>Test Page</1>
+        <main>
+            <p id="count-display"></p>
+            <button id="increment-btn">Increment</button>
+        </main>
         `;
   }
 }
