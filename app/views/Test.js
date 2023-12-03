@@ -1,9 +1,9 @@
 import AbstractView from "./AbstractView.js";
+import { setupCounter } from "/model/Counter.js";
 
 export default class extends AbstractView {
   constructor(params) {
     super(params);
-    this.setTitle("Test");
   }
 
   async getHtml() {
@@ -14,5 +14,9 @@ export default class extends AbstractView {
             <button id="increment-btn">Increment</button>
         </main>
         `;
+  }
+
+  async executeViewScript() {
+    setupCounter();
   }
 }

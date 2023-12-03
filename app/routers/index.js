@@ -1,14 +1,11 @@
-import Career from "/views/CareerView.js";
 import Design from "/views/DesignView.js";
 import Home from "/views/Home.js";
 import Post from "/views/PostView.js";
 import Test from "/views/Test.js";
-import { setupCounter } from "/model/Counter.js";
 
 const routes = [
   { path: "/", view: Home },
   { path: "/design", view: Design },
-  { path: "/career", view: Career },
   { path: "/posts/:id", view: Post },
   { path: "/test", view: Test },
 ];
@@ -28,11 +25,6 @@ const getParams = (match) => {
       return [key, values[i]];
     })
   );
-};
-
-export const navigateTo = (url) => {
-  history.pushState(null, null, url);
-  router();
 };
 
 const router = async () => {
@@ -57,11 +49,26 @@ const router = async () => {
   const view = new match.route.view(getParams(match));
   document.querySelector("#app").innerHTML = await view.getHtml();
 
-  if (match.route.view === Test) {
-    setupCounter();
-  }
+  if (!view.executeViewScript) return;
+
+  view.executeViewScript();
 };
 
 window.addEventListener("popstate", router);
 
 export default router;
+
+const navigateTo = (url) => {
+  history.pushState(null, null, url);
+  router();
+};
+
+const locationToHref = (url) => {
+  window.location.href = url;
+};
+
+const goToTossCareer = () => {
+  locationToHref("https://toss.im/career/jobs");
+};
+
+export { navigateTo, locationToHref, goToTossCareer };

@@ -1,4 +1,6 @@
-import router, { navigateTo } from "/routers/index.js";
+import router, { navigateTo, goToTossCareer } from "/routers/index.js";
+
+document.getElementById("goToTossCareer").addEventListener("click", goToTossCareer);
 
 const setupEventListeners = () => {
   document.body.addEventListener("click", (event) => {
