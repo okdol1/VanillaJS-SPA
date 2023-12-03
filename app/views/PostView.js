@@ -6,19 +6,26 @@ export default class extends AbstractView {
   constructor(params) {
     super(params);
     this.postId = params.id;
-    this.setTitle("Post");
+    this.setTitle(MOCK_POSTS[this.postId].title);
   }
 
-  async getHtml() {
+  getHtml() {
     const post = MOCK_POSTS[this.postId];
     return `
-      <img src="${post.thumbnailImg}" alt="${post.title}" />
-      <h1>${post.title}</h1>
-      <div>
-        <p>${post.author}</p>
-        <p>${formatDate(post.date)}</p>
+      <div class="container__inner post-container">
+        <img src="${post.thumbnailImg}" alt="${post.title}" />
+        <h1>${post.title}</h1>
+        <div>
+          <p>${post.author}</p>
+          <p>${formatDate(post.date)}</p>
+        </div>
+        ${post.contents}
       </div>
-      ${post.contents}
     `;
+  }
+
+  async render() {
+    await this.loadCSS("/css/post.module.css");
+    return this.getHtml();
   }
 }
