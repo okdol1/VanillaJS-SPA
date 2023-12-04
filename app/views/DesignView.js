@@ -1,4 +1,6 @@
 import AbstractView from "./AbstractView.js";
+import { DESIGN_POSTS } from "/data/mockPosts.js";
+import PostItem from "/components/PostItem.js";
 
 export default class extends AbstractView {
   constructor(params) {
@@ -7,12 +9,20 @@ export default class extends AbstractView {
   }
 
   getHtml() {
+    const postsHtml = DESIGN_POSTS.map((post) =>
+      PostItem({ post, href: `/design/article/${post.id}` })
+    ).join("");
+
     return `
-    <h1>Design Page</h1>
+    <div class="container__inner home-container">
+      <h1>디자인</h1>
+      <ul class="post-list">${postsHtml}</ul>
+    </div>
     `;
   }
 
-  render() {
+  async render() {
+    await this.loadCSS("/css/postList.module.css");
     return this.getHtml();
   }
 }

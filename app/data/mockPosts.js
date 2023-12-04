@@ -1,4 +1,4 @@
-export const MOCK_POSTS = [
+const TECK_POSTS = [
   {
     id: 0,
     title: "Feign 코드 분석과 서버 성능 개선",
@@ -108,3 +108,106 @@ export const MOCK_POSTS = [
     `,
   },
 ];
+
+const DESIGN_POSTS = [
+  {
+    id: 0,
+    title: "독이 되는 레퍼런스 활용법",
+    author: "장세린",
+    date: new Date("2023-11-27"),
+    thumbnailImg:
+      "https://static.toss.im/assets/homepage/tosstech/og/design-article-15-og.png",
+    summary:
+      "매혹적이지만 독이 될 수 있는 레퍼런스. 어떻게 활용하는 것이 좋을까요?",
+    contents: `
+      <div>
+        <div>
+          <p>
+            토스에서 킥보드도 빌릴 수 있다는 사실, 알고 계시나요? 
+          </p>
+          <p>
+            킥보드 서비스를 디자인하게 된 제가 제일 먼저 한 일은 <b>무작정 다른 앱을 다운받는 거</b>였어요. 킥보드 앱은 차고 넘쳤고, 10개 정도를 보다 보니 다 비슷하게 생겼더라고요. 그래서 별 의심 없이 화면을 토스답게 바꾸기만 하고 있었죠. 
+          </p>
+          <p>
+            ‘나 뭐 하고 있는 거지?’ 하는 생각이 들 때쯤 토스의 코어 밸류인 <b>‘Question Every Assumption’</b>이 뇌리에 스쳤어요. 
+          </p>
+        </div>
+        <aside>
+          <h4>Question Every Assumption</h4>
+          <p>
+            모든 당연해 보이는 것들에 질문을 던져라<br />
+            익숙함에서 벗어나 최상의 경험을 제공하자는 취지
+          </p>
+        </aside>
+        <div>
+          <p>
+            돌이켜보니 저는 당연한 것들에 의문을 가지지 않은 채 관습적으로 디자인하고 있더라고요.<br />
+            그때부터 정신 차리고 모든 기능, 모든 요소에 질문을 던지기 시작했어요.
+          </p>
+        </div>
+      </div>
+    `,
+  },
+  {
+    id: 1,
+    title: "효율적인 유저 리서치 환경을 만드는 리서치 플랫폼 팀, 들어보셨나요?",
+    author: "최정은",
+    date: new Date("2023-11-23"),
+    thumbnailImg:
+      "https://static.toss.im/illusts/tech-research-platform-og-image.png",
+    summary:
+      "토스팀에서 팀원들이 사용자를 더 쉽고, 빠르고, 편하게 만날 수 있도록 고군분투하고 있는 ‘리서치 플랫폼 팀’에 대해 소개해 보려고 해요.",
+    contents: `
+      <div>
+        <div>
+          <p>
+            지난 심플리시티23에서 많은 분이 UX리서치, 특히 “사용자를 어떻게 만나는지”에 대해 궁금해하셨더라고요. 
+          </p>
+          <p>
+            토스팀에서 팀원들이 사용자를 더 쉽고, 빠르고, 편하게 만날 수 있도록 고군분투하고 있는 ‘리서치 플랫폼 팀’에 대해 소개해 보려고 해요.
+          </p>
+        </div>
+      </div>
+    `,
+  },
+  {
+    id: 2,
+    title: "완성 없는 이야기, 가입 과정 개선",
+    author: "임경우",
+    date: new Date("2023-09-12"),
+    thumbnailImg:
+      "	https://static.toss.im/simplicity23/graphics/sim23-signup-cover.png",
+    summary: "가입 완료율을 높이기 위해 고민하고 시도했던 것들을 이야기 해요.",
+    contents: `
+      <div>
+        <div>
+          <p>
+            제품 성장 과정에 따라 적절한 UX가 다를 수 있다는 사실, 알고 계셨나요? 토스의 가입 과정은 테크 블로그에 첫 번째로 소개되었을 만큼 잘 만들었다고 자부하고 있었는데, 데이터를 확인해 보니 가입 완료율이 생각보다 낮았어요.
+          </p>
+          <p>
+            토스가 성장하면서 가입하는 주요 연령대가 바뀌었기 때문이에요. 가입 유저의 대부분이 2030이었을 때는 가입 완료율이 높았지만, 시니어 유저들이 주 가입층이 되니 가입 완료율이 낮아졌어요. 이번 글에서는 가입 완료율을 높이기 위해 고민하고 시도했던 것들을 이야기할게요.
+          </p>
+        </div>
+      </div>
+    `,
+  },
+  {
+    id: 3,
+    title: "인터랙션, 꼭 넣어야 해요?",
+    author: "박연주/김지혜",
+    date: new Date("2023-09-07"),
+    thumbnailImg:
+      "https://static.toss.im/simplicity23/graphics/sim23-interaction-cover.png",
+    summary:
+      "빠른 속도를 중요시하는 토스에서 어떻게 팀원들을 인터랙션에 공감하게 하고 슬릭한 제품을 만들어나갈 수 있었는지 소개할게요.",
+    contents: `
+      <div>
+        <p>
+          제품을 인터랙티브하게 개선하면 경험이 더 좋아진다는 것은 모두 알지만, 인터랙션을 구현하는 비용 때문에 엄두가 나지 않기도 하는데요. 인터랙션 디자이너가 토스팀에 합류했을 때도 마찬가지였어요. 빠른 속도를 중요시하는 토스에서 어떻게 팀원들을 인터랙션에 대해 공감하게 하고 슬릭한 제품을 만들어나갈 수 있었는지 소개할게요.
+        </p>
+      </div>
+    `,
+  },
+];
+
+export { TECK_POSTS, DESIGN_POSTS };

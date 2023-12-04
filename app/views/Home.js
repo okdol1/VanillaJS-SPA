@@ -1,6 +1,6 @@
 import AbstractView from "./AbstractView.js";
-import { MOCK_POSTS } from "/data/mockPosts.js";
-import { formatDate } from "/utils/formatDate.js";
+import { TECK_POSTS } from "/data/mockPosts.js";
+import PostItem from "/components/PostItem.js";
 
 export default class extends AbstractView {
   constructor(params) {
@@ -9,19 +9,8 @@ export default class extends AbstractView {
   }
 
   getHtml() {
-    const postsHtml = MOCK_POSTS.map(
-      (post) => `
-        <li class="post-item">
-          <a href="/posts/${post.id}">
-            <img src="${post.thumbnailImg}" alt="" />
-            <div>
-              <h2 class="post-title">${post.title}</h2>
-              <p class="post-summary">${post.summary}</p>
-              <p class="post-date">${formatDate(post.date)}</p>
-            </div>
-          </a>
-        </li>
-      `
+    const postsHtml = TECK_POSTS.map((post) =>
+      PostItem({ post, href: `/tech/article/${post.id}` })
     ).join("");
 
     return `
@@ -33,7 +22,7 @@ export default class extends AbstractView {
   }
 
   async render() {
-    await this.loadCSS("/css/home.module.css");
+    await this.loadCSS("/css/postList.module.css");
     return this.getHtml();
   }
 }

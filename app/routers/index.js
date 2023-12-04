@@ -1,13 +1,13 @@
 import Design from "/views/DesignView.js";
 import Home from "/views/Home.js";
-import Post from "/views/PostView.js";
-import Test from "/views/Test.js";
+import TechPostView from "/views/TechPostView.js";
+import DesignPostView from "/views/DesignPostView.js";
 
 const routes = [
   { path: "/", view: Home },
   { path: "/design", view: Design },
-  { path: "/posts/:id", view: Post },
-  { path: "/test", view: Test },
+  { path: "/tech/article/:id", view: TechPostView },
+  { path: "/design/article/:id", view: DesignPostView },
 ];
 
 // 경로를 정규 표현식으로 변환
