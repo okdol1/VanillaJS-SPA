@@ -1,25 +1,15 @@
-const createState = (initialValue) => {
-  let _state = initialValue;
-  let listeners = [];
+import createState from "./createState.js";
 
-  const getState = () => _state;
+const counterState = createState(0);
 
-  const setState = (newValue) => {
-    _state = newValue;
-    listeners.forEach((listener) => listener(_state));
-  };
+const render = (count) => {
+  const counterElement = document.getElementById("count-display");
+  if (!counterElement) return;
 
-  const subscribe = (listener) => {
-    listeners.push(listener);
-    listener(_state);
-  };
-
-  return { getState, setState, subscribe };
+  counterElement.innerText = count;
 };
 
-export const counterState = createState(0);
-
-export const setupCounter = () => {
+const setupCounter = () => {
   const counterElement = document.getElementById("count-display");
   const incrementButton = document.getElementById("increment-btn");
 
@@ -33,10 +23,4 @@ export const setupCounter = () => {
   });
 };
 
-const render = (count) => {
-  const counterElement = document.getElementById("count-display");
-  if (counterElement) {
-    counterElement.innerText = count;
-  }
-};
-counterState.subscribe(render);
+export { counterState, setupCounter };
