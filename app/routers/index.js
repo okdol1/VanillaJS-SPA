@@ -1,12 +1,14 @@
 import Design from "/views/DesignView.js";
 import Home from "/views/Home.js";
-import Post from "/views/PostView.js";
+import TechPostView from "/views/TechPostView.js";
+import DesignPostView from "/views/DesignPostView.js";
 import Test from "/views/Test.js";
 
 const routes = [
   { path: "/", view: Home },
   { path: "/design", view: Design },
-  { path: "/posts/:id", view: Post },
+  { path: "/tech/article/:id", view: TechPostView },
+  { path: "/design/article/:id", view: DesignPostView },
   { path: "/test", view: Test },
 ];
 
