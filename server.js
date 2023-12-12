@@ -8,6 +8,10 @@ app.use(
   "/components",
   express.static(path.resolve(__dirname, "app", "components"))
 );
+app.use(
+  "/constant",
+  express.static(path.resolve(__dirname, "app", "constant"))
+);
 app.use("/css", express.static(path.resolve(__dirname, "app", "css")));
 app.use("/data", express.static(path.resolve(__dirname, "app", "data")));
 app.use("/model", express.static(path.resolve(__dirname, "app", "model")));

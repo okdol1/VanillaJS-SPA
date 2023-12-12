@@ -1,7 +1,8 @@
-import { formatDate } from "/utils/formatDate.js";
+import dayjs from "/utils/dayjs.js";
 import PostFeedback from "/components/PostFeedback.js";
 
 const Post = ({ post }) => {
+  const formattedDate = dayjs(post.date).format("YYYY-MM-DD");
   return `
     <div class="container__inner post-container">
         <header>
@@ -11,7 +12,7 @@ const Post = ({ post }) => {
             <img src="/public/images/common-profile.png" alt="profile image" />
             <div>
             <p class="author-name">${post.author}</p>
-            <p class="author-date">${formatDate(post.date)}</p>
+            <p class="author-date">${formattedDate}</p>
             </div>
         </section>
         </header>
