@@ -1,7 +1,7 @@
 import AbstractView from "./AbstractView.js";
 import { DESIGN_POSTS } from "/data/mockPosts.js";
 import { setupFeedback } from "/model/PostFeedback.js";
-import Post from "/components/Post.js";
+import Post from "/components/Post.ts";
 
 export default class extends AbstractView {
   constructor(params) {
