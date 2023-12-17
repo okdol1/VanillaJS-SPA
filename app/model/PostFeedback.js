@@ -2,13 +2,13 @@ import createState from "./createState.js";
 
 const PostFeedbackState = createState(null);
 
-const render = (feedback) => {
-  if (feedback === null) return;
+const render = (hasFeedback) => {
+  if (hasFeedback === null) return;
 
   const goodElement = document.getElementById("feedback-good-display");
   const badElement = document.getElementById("feedback-bad-display");
 
-  if (feedback === true) {
+  if (hasFeedback === true) {
     goodElement.style.opacity = "1";
     badElement.style.opacity = "0";
     return;
