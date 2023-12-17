@@ -1,4 +1,6 @@
-const TECK_POSTS = [
+import { PostData } from "../types/index";
+
+const TECK_POSTS: PostData[] = [
   {
     id: 0,
     title: "Feign 코드 분석과 서버 성능 개선",
@@ -109,7 +111,7 @@ const TECK_POSTS = [
   },
 ];
 
-const DESIGN_POSTS = [
+const DESIGN_POSTS: PostData[] = [
   {
     id: 0,
     title: "독이 되는 레퍼런스 활용법",

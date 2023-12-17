@@ -1,9 +1,10 @@
-import AbstractView from "./AbstractView.js";
-import { DESIGN_POSTS } from "/data/mockPosts.js";
-import PostItem from "/components/PostItem.js";
+import AbstractView from "./AbstractView";
+import { DESIGN_POSTS } from "../data/mockPosts";
+import PostItem from "../components/PostItem";
+import { Params } from "../types/index";
 
 export default class extends AbstractView {
-  constructor(params) {
+  constructor(params: Params) {
     super(params);
     this.setTitle("토스 기술 블로그, 토스디자인");
   }

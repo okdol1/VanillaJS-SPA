@@ -1,5 +1,5 @@
-import dayjs from "../utils/dayjs.js";
-import PostFeedback from "./PostFeedback.js";
+import dayjs from "../utils/dayjs";
+import PostFeedback from "./PostFeedback";
 
 const Post = ({ post }: { post: any }) => {
   const formattedDate = dayjs(post.date).format("YYYY-MM-DD");

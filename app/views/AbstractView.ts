@@ -1,9 +1,13 @@
-export default class {
-  constructor(params) {
+import { Params } from "../types/index";
+
+export default class AbstractView {
+  params: Params;
+
+  constructor(params: Params) {
     this.params = params;
   }
 
-  setTitle(title) {
+  setTitle(title: string) {
     document.title = title;
   }
 
@@ -11,7 +15,7 @@ export default class {
     return "";
   }
 
-  loadCSS(path) {
+  loadCSS(path: string): Promise<void> {
     return new Promise((resolve, reject) => {
       const head = document.head;
       const link = document.createElement("link");
