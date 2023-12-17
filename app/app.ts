@@ -2,12 +2,13 @@ import router, { navigateTo, goToTossCareer } from "./routers/index";
 
 const setupEventListeners = () => {
   document.body.addEventListener("click", (e) => {
-    const target = e.target as Element;
-    if (!target) return;
+    const target = e.target;
+    if (!(target instanceof Element)) return;
 
     if (target.matches("[data-link]")) {
       e.preventDefault();
-      navigateTo((target as HTMLAnchorElement).href);
+      target instanceof HTMLAnchorElement &&
+        navigateTo((target as HTMLAnchorElement).href);
     }
   });
 };
