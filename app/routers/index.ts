@@ -1,7 +1,8 @@
-import Design from "/views/DesignView.js";
-import Home from "/views/Home.js";
-import TechPostView from "/views/TechPostView.js";
-import DesignPostView from "/views/DesignPostView.js";
+import Design from "../views/DesignView";
+import Home from "../views/Home";
+import TechPostView from "../views/TechPostView";
+import DesignPostView from "../views/DesignPostView";
+import { Match, Params, View } from "../types/index";
 
 const routes = [
   { path: "/", view: Home },
@@ -10,12 +11,13 @@ const routes = [
   { path: "/design/article/:id", view: DesignPostView },
 ];
 
-// 경로를 정규 표현식으로 변환
-const pathToRegex = (path) =>
+const pathToRegex = (path: string) =>
   new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
-const getParams = (match) => {
-  const values = match.result.slice(1);
+const getParams = (match: Match): Params => {
+  const values = match.result?.slice(1);
+  if (!values || values.length === 0) return { id: "0" };
+
   const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map(
     (result) => result[1]
   );
@@ -46,11 +48,13 @@ const router = async () => {
     };
   }
 
-  const view = new match.route.view(getParams(match));
-  document.querySelector("#app").innerHTML = await view.render();
+  const view: View = new match.route.view(getParams(match));
+
+  const appEl = document.querySelector("#app");
+  if (!appEl) return console.error("'app' not found");
+  appEl.innerHTML = await view.render();
 
   if (!view.executeViewScript) return;
-
   view.executeViewScript();
 };
 
@@ -58,12 +62,12 @@ window.addEventListener("popstate", router);
 
 export default router;
 
-const navigateTo = (url) => {
-  history.pushState(null, null, url);
+const navigateTo = (url: string) => {
+  history.pushState(null, "", url);
   router();
 };
 
-const locationToHref = (url) => {
+const locationToHref = (url: string) => {
   window.location.href = url;
 };
 

@@ -1,6 +1,7 @@
-import dayjs from "/utils/dayjs.js";
+import { PostData } from "../types/index";
+import dayjs from "../utils/dayjs";
 
-const PostItem = ({ post, href }) => {
+const PostItem = ({ post, href }: { post: PostData; href: string }) => {
   const formattedDate = dayjs(post.date).format("YYYY-MM-DD");
   return `
     <li class="post-item">
