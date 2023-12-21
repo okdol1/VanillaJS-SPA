@@ -1,7 +1,8 @@
+import { PostData } from "../types/index";
 import dayjs from "../utils/dayjs";
 import PostFeedback from "./PostFeedback";
 
-const Post = ({ post }: { post: any }) => {
+const Post = ({ post }: { post: PostData }) => {
   const formattedDate = dayjs(post.date).format("YYYY-MM-DD");
   return `
     <div class="container__inner post-container">
